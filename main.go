@@ -10,10 +10,9 @@ func newString(arr []string) (answer string) {
 			max = len(r) // used for index range
 		}
 	}
-	fmt.Println(max)
 	v := make([][]bool, len(arr))
 	for i := range v {
-		v[i] = make([]bool, max+1)
+		v[i] = make([]bool, max)
 	}
 
 	// loop over max length of longest word
@@ -33,7 +32,7 @@ func recursion(arr [][]rune, v [][]bool, a string, i int, j int) string {
 	if len(arr[i]) <= j {
 		return a
 	}
-	fmt.Printf("%v %v\n", i, j)
+	//	fmt.Printf("%v %v\n", i, j)
 	if v[i][j] {
 		return a
 	}
